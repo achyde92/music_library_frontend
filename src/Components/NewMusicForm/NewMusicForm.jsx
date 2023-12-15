@@ -20,14 +20,14 @@ const NewMusicForm = ({ onNewMusic }) => {
     };
     try {
       const response = await axios.post(
-        "https://localhost:7276/api/movies",
+        "https://localhost:7183/api/MusicLibrary",
         formData
       );
       if (response.status === 201) {
         onNewMusic();
       }
     } catch (error) {
-      console.warn("Error Submitting new movie form: ");
+      console.warn("Error Submitting new music form: ");
     }
   };
 

@@ -11,7 +11,7 @@ function App() {
 
   const fetchSongs = async () => {
     try {
-      const response = await axios.get("");
+      const response = await axios.get("https://localhost:7183/api/MusicLibrary");
       // console.log(response);
       setSongs(response.data);
     } catch (error) {
