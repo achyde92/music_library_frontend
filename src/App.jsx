@@ -1,7 +1,8 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
-import MusicList from "./Components/MusicList/MusicList";
+import MusicTable from "./Components/MusicTable/MusicTable";
 import NewMusicForm from "./Components/NewMusicForm/NewMusicForm";
+import SearchBarForm from "./Components/SearchBar/SearchBarForm";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -25,8 +26,9 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <SearchBarForm />
       <div className="flex-container">
-        <MusicList
+        <MusicTable
           songs={songs}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}

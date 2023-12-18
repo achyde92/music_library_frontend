@@ -33,7 +33,7 @@ const NewMusicForm = ({ onNewMusic }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex item">
-      <h4>Add Movie</h4>
+      <h4>Add Song </h4>
       <div className="p-2">
         <TextField label="Title" value={title} onChange={setTitle} />
         <TextField label="Album" value={album} onChange={setAlbum} />

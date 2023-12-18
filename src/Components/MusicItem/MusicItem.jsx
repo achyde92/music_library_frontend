@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const MusicItem = ({title, activeInedex: activeIndex, setActiveIndex, index}) => {
+const MusicItem = ({title, album, artist, genre, releaseDate, activeInedex: activeIndex, setActiveIndex, index}) => {
     const [isFavorite, setIsFavortite] = useState(false);
 
     const handleFavorite = (e) => {
@@ -15,10 +15,16 @@ const MusicItem = ({title, activeInedex: activeIndex, setActiveIndex, index}) =>
     const activeClass = index === activeIndex ? "active-movie" : ""
 
     return (
-         <div onClick={handleActive} className={`music-item ${activeClass}`}>
-        <span>{title}</span>
+    <tr onClick={handleActive} className={`music-item ${activeClass}`}>
+        <td>{title}</td>
+        <td>{album}</td>
+        <td>{artist}</td>
+        <td>{genre}</td>
+        <td>{releaseDate}</td>
+        <td>
         <button className= {btnClass} onClick={handleFavorite}>favorite</button>
-    </div> );
+        </td>
+    </tr> );
 }
  
 export default MusicItem;
