@@ -3,7 +3,7 @@ import "./Header.css"
 const Header = ({}) => {
   return (
     <header>
-      <h2>Movies!</h2>
+      <h2>Music Library</h2>
     </header>
   );
 };

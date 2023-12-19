@@ -1,22 +1,29 @@
 import MusicItem from "../MusicItem/MusicItem";
+import DeleteMusicForm from "../DeleteMusicForm/DeleteMusicForm";
 
-const MusicTable = ({songs= [], activeIndex, setActiveIndex}) => {
-  const musicItems = songs.map((song, i) => 
-  <MusicItem 
-    key={song.id}
-    title={song.title}
-    album={song.album}
-    artist={song.artist}
-    genre={song.genre}
-    releaseDate={song.releaseDate}
-    activeIndex={activeIndex} 
-    setActiveIndex={setActiveIndex}
-    index={i}
-  />);
+const MusicTable = ({ songs = [], activeIndex, setActiveIndex, onDelete }) => {
+  const musicItems = songs.map((song, i) => (
+    <tr key={song.id}>
+      <MusicItem
+        title={song.title}
+        album={song.album}
+        artist={song.artist}
+        genre={song.genre}
+        releaseDate={song.releaseDate}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+        index={i}
+      />
+      <td>
+        <DeleteMusicForm songId={song.id} onDelete={onDelete} />
+      </td>
+    </tr>
+  ));
+
   return (
     <div className="flex-item">
       <h4>Playlist:</h4>
-      <table>
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Title</th>
@@ -26,21 +33,7 @@ const MusicTable = ({songs= [], activeIndex, setActiveIndex}) => {
             <th>Release Date</th>
           </tr>
         </thead>
-        <tbody>
-          {songs.map((song, i) => (
-            <MusicItem
-              key={song.id}
-              title={song.title}
-              album={song.album}
-              artist={song.artist}
-              genre={song.genre}
-              releaseDate={song.releaseDate}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
-              index={i}
-            />
-          ))}
-        </tbody>
+        <tbody>{musicItems}</tbody>
       </table>
     </div>
   );

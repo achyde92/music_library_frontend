@@ -4,11 +4,10 @@ const SearchBar = ({searchTerm, onSearchChange}) => {
     return ( 
         <input
         type='text'
-        placeholder='Search by Title'
+        placeholder='Search here'
         value={searchTerm}
         onChange={onSearchChange}
         />
      );
 }
- 
 export default SearchBar;
